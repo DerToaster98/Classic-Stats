@@ -1,0 +1,37 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "gpg",
+        "brg",
+        "nnn"
+    ],
+    "key":
+    {
+        "g":
+        {
+            "tag": "forge:ingots/gold"
+        },
+        "p":
+        {
+            "item": "minecraft:glass_pane"
+        },
+        "b":
+        {
+            "item": "minecraft:experience_bottle"
+        },
+		"n":
+		{
+			"tag": "forge:nuggets/gold"
+		},
+		"r":
+		{
+			"item": "minecraft:repeater"
+		}
+    },
+    "result":
+    {
+        "item": "classicstats:stat_device",
+        "count": 1
+    }
+}

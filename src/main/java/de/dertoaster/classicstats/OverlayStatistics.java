@@ -22,7 +22,7 @@ public class OverlayStatistics extends AbstractGui {
 		final int score = this.mcClient.player.getScore();
 		final int xpNeededForNextLevel = this.mcClient.player.getXpNeededForNextLevel();
 		final int xp = Math.round(this.mcClient.player.experienceProgress * xpNeededForNextLevel);
-		final long day = this.mcClient.level.getDayTime() / 24000L;
+		final long day = 1 + (this.mcClient.level.getDayTime() / 24000L);
 		
 		/*
 		 * Matrix, String, X, Y, color(?)

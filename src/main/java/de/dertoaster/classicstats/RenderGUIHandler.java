@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -26,18 +25,69 @@ public class RenderGUIHandler {
 		DEVICES.add(CSItems.ITEM_STAT_DEVICE.get());
 	}
 
-	@SubscribeEvent
+	/*@SubscribeEvent
 	public static void onRenderTick(RenderGameOverlayEvent.Post event) {
-		if (DEVICES == null) {
-			fillDevices();
-		}
-
+		if (DEVICES == null) { fillDevices(); }
+		 
 		ClientPlayerEntity clientPlayer = mc.player;
+		 
+	 	boolean hasDevice = clientPlayer.inventory.hasAnyOf(DEVICES);
+		 
+	 	if (hasDevice) { overlay.render(event.getMatrixStack()); }
+		 
+	}*/
 
-		boolean hasDevice = clientPlayer.inventory.hasAnyOf(DEVICES);
-
-		if (hasDevice) {
+	@SubscribeEvent
+	public static void onGameOverlayRender(RenderGameOverlayEvent event) {
+		//System.out.println("GameOverlayRenderEvent");
+		switch (event.getType()) {
+		case ALL:
 			overlay.render(event.getMatrixStack());
+			break;
+		case AIR:
+			break;
+		case ARMOR:
+			break;
+		case BOSSHEALTH:
+			break;
+		case BOSSINFO:
+			break;
+		case CHAT:
+			break;
+		case CROSSHAIRS:
+			break;
+		case DEBUG:
+			break;
+		case EXPERIENCE:
+			break;
+		case FOOD:
+			break;
+		case FPS_GRAPH:
+			break;
+		case HEALTH:
+			break;
+		case HEALTHMOUNT:
+			break;
+		case HELMET:
+			break;
+		case HOTBAR:
+			break;
+		case JUMPBAR:
+			break;
+		case PLAYER_LIST:
+			break;
+		case PORTAL:
+			break;
+		case POTION_ICONS:
+			break;
+		case SUBTITLES:
+			break;
+		case TEXT:
+			break;
+		case VIGNETTE:
+			break;
+		default:
+			break;
 		}
 	}
 

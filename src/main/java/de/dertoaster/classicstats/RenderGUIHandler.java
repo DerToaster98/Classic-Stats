@@ -19,49 +19,7 @@ public class RenderGUIHandler {
 		//System.out.println("GameOverlayRenderEvent");
 		switch (event.getType()) {
 		case ALL:
-			overlay.render(event.getMatrixStack());
-			break;
-		case AIR:
-			break;
-		case ARMOR:
-			break;
-		case BOSSHEALTH:
-			break;
-		case BOSSINFO:
-			break;
-		case CHAT:
-			break;
-		case CROSSHAIRS:
-			break;
-		case DEBUG:
-			break;
-		case EXPERIENCE:
-			break;
-		case FOOD:
-			break;
-		case FPS_GRAPH:
-			break;
-		case HEALTH:
-			break;
-		case HEALTHMOUNT:
-			break;
-		case HELMET:
-			break;
-		case HOTBAR:
-			break;
-		case JUMPBAR:
-			break;
-		case PLAYER_LIST:
-			break;
-		case PORTAL:
-			break;
-		case POTION_ICONS:
-			break;
-		case SUBTITLES:
-			break;
-		case TEXT:
-			break;
-		case VIGNETTE:
+			overlay.render(event.getMatrixStack(), 1.0F);
 			break;
 		default:
 			break;

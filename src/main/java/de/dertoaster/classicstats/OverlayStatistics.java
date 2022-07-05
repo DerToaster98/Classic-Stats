@@ -1,23 +1,27 @@
 package de.dertoaster.classicstats;
 
+import java.awt.Color;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.network.chat.Component;
 
-public class OverlayStatistics extends Gui {
+public class OverlayStatistics extends GuiComponent {
 
 	private Minecraft mcClient;
 
 	public OverlayStatistics(Minecraft minecraft) {
-		super(minecraft);
+		super();
 		this.mcClient = minecraft;
 	}
 
+	static final Color yellow = new Color(0, 255, 255);
 	
-	@Override
-	public void render(PoseStack matrixStack, float p_93032_) {
+	//@Override
+	public void render(PoseStack matrixStack) {
 		if (this.mcClient.options.renderDebug) {
 			return;
 		}
@@ -31,9 +35,9 @@ public class OverlayStatistics extends Gui {
 		/*
 		 * Matrix, String, X, Y, color(?)
 		 */
-		Gui.drawString(matrixStack, this.mcClient.font, "Day: " + ChatFormatting.YELLOW + day, 2, 2, -1);
-		Gui.drawString(matrixStack, this.mcClient.font, "Score: " + ChatFormatting.YELLOW + +score, 2, 20, -1);
-		Gui.drawString(matrixStack, this.mcClient.font, "XP: " + ChatFormatting.YELLOW + +xp + "/" + xpNeededForNextLevel, 2, 31, -1);
+		Gui.drawString(matrixStack, this.mcClient.font, Component.translatable("gui.classicstats.stats_overlay.day", day), 2, 2, yellow.getRGB());
+		Gui.drawString(matrixStack, this.mcClient.font, Component.translatable("gui.classicstats.stats_overlay.score", score), 2, 20, yellow.getRGB());
+		Gui.drawString(matrixStack, this.mcClient.font, Component.translatable("gui.classicstats.stats_overlay.experience", xp, xpNeededForNextLevel), 2, 31, yellow.getRGB());
 
 		matrixStack.popPose();
 	}

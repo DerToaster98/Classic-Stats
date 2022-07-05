@@ -19,7 +19,7 @@ public class RenderGUIHandler {
 		//System.out.println("GameOverlayRenderEvent");
 		switch (event.getType()) {
 		case ALL:
-			overlay.render(event.getMatrixStack(), 1.0F);
+			overlay.render(event.getPoseStack());
 			break;
 		default:
 			break;

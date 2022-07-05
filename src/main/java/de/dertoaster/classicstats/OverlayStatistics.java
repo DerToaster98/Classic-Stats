@@ -18,7 +18,7 @@ public class OverlayStatistics extends GuiComponent {
 		this.mcClient = minecraft;
 	}
 
-	static final Color yellow = new Color(0, 255, 255);
+	static final Color yellow = new Color(255, 255, 0);
 	
 	//@Override
 	public void render(PoseStack matrixStack) {

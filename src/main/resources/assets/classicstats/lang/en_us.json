@@ -1,5 +1,5 @@
 {
-    "gui.classicstats.stats_overlay.day": "\u00A7fDay: \u00A7e%s",
-	"gui.classicstats.stats_overlay.score": "\u00A7fScore: \u00A7e%s",
-	"gui.classicstats.stats_overlay.experience": "\u00A7fXP: \u00A7e%s\u00A7f/\u00A7e%s"
+    "gui.classicstats.stats_overlay.day": "\u00A7fDay: \u00A7f%s",
+	"gui.classicstats.stats_overlay.score": "\u00A7fScore: \u00A7f%s",
+	"gui.classicstats.stats_overlay.experience": "\u00A7fXP: \u00A7f%s\u00A7f/\u00A7f%s"
 }   

@@ -3,7 +3,7 @@ package de.dertoaster.classicstats;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -15,10 +15,10 @@ public class RenderGUIHandler {
 	protected static final OverlayStatistics overlay = new OverlayStatistics(mc);
 
 	@SubscribeEvent
-	public static void onGameOverlayRender(RenderGameOverlayEvent event) {
+	public static void onGameOverlayRender(RenderGuiOverlayEvent event) {
 		//System.out.println("GameOverlayRenderEvent");
-		switch (event.getType()) {
-		case ALL:
+		switch (event.getPhase()) {
+		case NORMAL:
 			overlay.render(event.getPoseStack());
 			break;
 		default:

@@ -12,14 +12,13 @@ import net.minecraftforge.fml.common.Mod;
 public class RenderGUIHandler {
 
 	protected static final Minecraft mc = Minecraft.getInstance();
-	protected static final OverlayStatistics overlay = new OverlayStatistics(mc);
 
 	@SubscribeEvent
 	public static void onGameOverlayRender(RenderGuiOverlayEvent event) {
 		//System.out.println("GameOverlayRenderEvent");
 		switch (event.getPhase()) {
 		case NORMAL:
-			overlay.render(event.getPoseStack());
+			OverlayStatistics.render(mc, event.getGuiGraphics());
 			break;
 		default:
 			break;
